@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <title> Position </title>
+    <meta content="" name="descriptison">
+    <meta content="" name="keywords">
+
+    <!-- Favicons -->
+    <link href="../static/assets/img/favicon.png" rel="icon">
+    <link href="../static/assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,600,600i,700,700i,900"
+          rel="stylesheet">
+
+    <!-- Vendor CSS Files -->
+    <link href="../static/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../static/assets/vendor/icofont/icofont.min.css" rel="stylesheet">
+    <link href="../static/assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <link href="../static/assets/vendor/animate.css/animate.min.css" rel="stylesheet">
+    <link href="../static/assets/vendor/venobox/venobox.css" rel="stylesheet">
+    <link href="../static/assets/vendor/aos/aos.css" rel="stylesheet">
+
+    <!-- Template Main CSS File -->
+    <link href="../static/assets/css/style.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+<!-- ======= Header ======= -->
+<header id="header">
+    <div class="container">
+
+        <div class="logo float-left">
+            <h1 class="text-light"><a href="index.html"><span>51 job (Peking) 职位分析（J & p）</span></a></h1>
+            <!-- Uncomment below if you prefer to use an image logo -->
+            <!-- <a href="index.html"><img src="../static/assets/img/logo.png" alt="" class="img-fluid"></a>-->
+        </div>
+
+        <nav class="nav-menu float-right d-none d-lg-block">
+            <ul>
+                <li class="active"><a href="index">主页 <i class="la la-angle-down"></i></a></li>
+                <li><a href="position">职位</a></li>
+                <li><a href="analyze">分析</a></li>
+                <li><a href="word_cloud">词云</a></li>
+                <li><a href="member">成员</a></li>
+            </ul>
+        </nav><!-- .nav-menu -->
+    </div>
+</header><!-- End Header -->
+
+<main id="main">
+
+    <!-- ======= Position ======= -->
+    <section id="portfolio" class="portfolio section-bg">
+        <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+            <div class="section-title">
+                <h2>Finding your future</h2>
+                <p>曾记否，那些年，被抹杀的创意的哭泣声；曾记否，那些年，马之千里者<br>却没有伯乐的悲哀；曾记否，那些年，怀揣梦想却被显示无情地践踏的奈若何；路有多远，看你与谁同行，一切从薪开始，让你的创意，再飞一会。</p>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <ul id="portfolio-flters">
+                        <li data-filter="*" class="filter-active">All</li>
+                        <li data-filter=".filter-app">Python</li>
+                        <li data-filter=".filter-card">Java</li>
+                    </ul>
+                    <div style="background-color:#FFFFFF;border-radius:3px;width: 150px;">&nbsp;下载：<a href="../static/assets/excel/51jobJava.xlsx" download="python职位信息">Java</a>&nbsp;&nbsp;<a href="../static/assets/excel/51jobPython.xlsx" download="Java职位信息">Python</a></div><br>
+                </div>
+            </div>
+            <div class="row portfolio-container">
+                <div class="col-lg-12 col-md-6 portfolio-item filter-app">
+                    <div class="portfolio-wrap">
+                        <table class="table table-striped">
+                            <tr>
+                                <td>ID</td>
+                                <td>职位</td>
+                                <td>薪资</td>
+                                <td>公司类别</td>
+                                <td>公司</td>
+                                <td>经验要求</td>
+                            </tr>
+                            {% for item in pylist %}
+                                <tr>
+                                    <td>{{ item[0] }}</td>
+                                    <td style="width: 300px;"><a href="{{ item[1] }}">{{ item[2] }}</a></td>
+                                    <td style="width: 120px;">{{ item[3] }}</td>
+                                    <td style="width: 120px;">{{ item[4] }}</td>
+                                    <td>{{ item[5] }}</td>
+                                    <td style="width: 150px;">{{ item[7] }}</td>
+                                </tr>
+                            {% endfor %}
+                        </table>
+                        <nav aria-label="Page navigation example">
+                            <ul class="pagination">
+                                <li {% if page == 1 %} class="page-item disabled" {% endif %}>
+                                    <a class="page-link" href="{{ url_for('position') }}?page={{ page-1 }}"
+                                       aria-label="Previous">
+                                        <span aria-hidden="true">&laquo;</span>
+                                    </a>
+                                </li>
+                                {% for i in range(1, 11) %}
+
+
+                                    <li {% if i == page %} class="page-item active" {% endif %}>
+                                        <a class="page-link" href="{{ url_for('position') }}?page={{ i }}">{{ i }}</a>
+                                    </li>
+                                {% endfor %}
+                                {% if page >= 11 %}
+                                    <li class="page-item active">
+                                        <a class="page-link"
+                                           href="{{ url_for('position') }}?page={{ page + 1 }}">{{ page }}</a>
+                                    </li>
+                                {% endif %}
+                                <li  {% if page == 50 %} class="page-item disabled" {% endif %}>
+                                    <a class="page-link" href="{{ url_for('position') }}?page={{ page + 1 }}"
+                                       aria-label="Next">
+                                        <span aria-hidden="true">&raquo;</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+
+                <div class="col-lg-12 col-md-6 portfolio-item filter-card">
+                    <div class="portfolio-wrap">
+                        <table class="table table-striped">
+                            <tr>
+                                <td>ID</td>
+                                <td>职位</td>
+                                <td>薪资</td>
+                                <td>公司类别</td>
+                                <td>公司</td>
+                                <td>经验要求</td>
+                            </tr>
+                            {% for item in javalist %}
+                                <tr>
+                                    <td>{{ item[0] }}</td>
+                                    <td style="width: 300px;"><a href="{{ item[1] }}">{{ item[2] }}</a></td>
+                                    <td style="width: 120px;">{{ item[3] }}</td>
+                                    <td style="width: 120px;">{{ item[4] }}</td>
+                                    <td>{{ item[5] }}</td>
+                                    <td style="width: 150px;">{{ item[7] }}</td>
+                                </tr>
+                            {% endfor %}
+                        </table>
+                        <nav aria-label="Page navigation example">
+                            <ul class="pagination">
+                                <li {% if page == 1 %} class="page-item disabled" {% endif %}>
+                                    <a class="page-link" href="{{ url_for('position') }}?page={{ page-1 }}"
+                                       aria-label="Previous">
+                                        <span aria-hidden="true">&laquo;</span>
+                                    </a>
+                                </li>
+                                {% for i in range(1, 11) %}
+
+
+                                    <li {% if i == page %} class="page-item active" {% endif %}>
+                                        <a class="page-link" href="{{ url_for('position') }}?page={{ i }}">{{ i }}</a>
+                                    </li>
+                                {% endfor %}
+                                {% if page >= 11 %}
+                                    <li class="page-item active">
+                                        <a class="page-link"
+                                           href="{{ url_for('position') }}?page={{ page + 1 }}">{{ page }}</a>
+                                    </li>
+                                {% endif %}
+                                <li  {% if page == 50 %} class="page-item disabled" {% endif %}>
+                                    <a class="page-link" href="{{ url_for('position') }}?page={{ page + 1 }}"
+                                       aria-label="Next">
+                                        <span aria-hidden="true">&raquo;</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section><!-- End Our Position -->
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+    <div class="container">
+      <div class="copyright">
+        &copy; Copyright <strong><span>51 Job 职位分析</span></strong>. All Rights Reserved
+      </div>
+      <div class="credits">
+       More Product <a href="index.html" target="_blank" title="Soft World">soft world</a> - Collect from <a href="index.html" title="Soft wWrld产品" target="_blank">Soft World产品</a>
+      </div>
+    </div>
+  </footer><!-- End Footer -->
+
+  <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="../static/assets/vendor/jquery/jquery.min.js"></script>
+  <script src="../static/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="../static/assets/vendor/jquery.easing/jquery.easing.min.js"></script>
+  <script src="../static/assets/vendor/php-email-form/validate.js"></script>
+  <script src="../static/assets/vendor/jquery-sticky/jquery.sticky.js"></script>
+  <script src="../static/assets/vendor/venobox/venobox.min.js"></script>
+  <script src="../static/assets/vendor/waypoints/jquery.waypoints.min.js"></script>
+  <script src="../static/assets/vendor/counterup/counterup.min.js"></script>
+  <script src="../static/assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="../static/assets/vendor/aos/aos.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="../static/assets/js/main.js"></script>
+
+</body>
+
+</html>
