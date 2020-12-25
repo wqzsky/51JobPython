@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <title> Analyze </title>
+    <meta content="" name="descriptison">
+    <meta content="" name="keywords">
+
+    <!-- Favicons -->
+    <link href="../static/assets/img/favicon.png" rel="icon">
+    <link href="../static/assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,600,600i,700,700i,900"
+          rel="stylesheet">
+
+    <!-- Vendor CSS Files -->
+    <link href="../static/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../static/assets/vendor/icofont/icofont.min.css" rel="stylesheet">
+    <link href="../static/assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <link href="../static/assets/vendor/animate.css/animate.min.css" rel="stylesheet">
+    <link href="../static/assets/vendor/venobox/venobox.css" rel="stylesheet">
+    <link href="../static/assets/vendor/aos/aos.css" rel="stylesheet">
+
+    <!-- Template Main CSS File -->
+    <link href="../static/assets/css/style.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+<!-- ======= Header ======= -->
+<header id="header">
+    <div class="container">
+
+        <div class="logo float-left">
+            <h1 class="text-light"><a href="index.html"><span>51 job (Peking) 职位分析（J & p）</span></a></h1>
+            <!-- Uncomment below if you prefer to use an image logo -->
+            <!-- <a href="index.html"><img src="../static/assets/img/logo.png" alt="" class="img-fluid"></a>-->
+        </div>
+
+        <nav class="nav-menu float-right d-none d-lg-block">
+            <ul>
+                <li class="active"><a href="index">主页 <i class="la la-angle-down"></i></a></li>
+                <li><a href="position">职位</a></li>
+                <li><a href="analyze">分析</a></li>
+                <li><a href="word_cloud">词云</a></li>
+                <li><a href="member">成员</a></li>
+            </ul>
+        </nav><!-- .nav-menu -->
+    </div>
+</header><!-- End Header -->
+
+<main id="main">
+
+    <!-- ======= Counts Section ======= -->
+    <section class="counts section-bg">
+        <br>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-6 text-center" data-aos="fade-up">
+                    <a href="position">
+                        <div class="count-box">
+                            <span data-toggle="counter-up">1998</span>
+                            <p>职位</p>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="col-lg-3 col-md-6 text-center" data-aos="fade-up" data-aos-delay="200">
+                    <a href="analyze">
+                        <div class="count-box">
+                            <span data-toggle="counter-up">3</span>
+                            <p>分析</p>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="col-lg-3 col-md-6 text-center" data-aos="fade-up" data-aos-delay="400">
+                    <a href="word_cloud">
+                        <div class="count-box">
+                            <span data-toggle="counter-up">2</span>
+                            <p>词云</p>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="col-lg-3 col-md-6 text-center" data-aos="fade-up" data-aos-delay="600">
+                    <a href="member">
+                        <div class="count-box">
+                            <span data-toggle="counter-up">2</span>
+                            <p>成员</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <br>
+        </div>
+    </section><!-- End Counts Section -->
+
+    <section class="counts section-bg">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 col-md-6 text-center" data-aos="fade-up">
+                    <!-- 为 ECharts 准备一个具备大小（宽高）的 DOM -->
+                    <div class="count-box" id="zhifang" style="width: auto;height:600px;"></div>
+                    <br><br><br>
+                </div>
+
+                <div class="col-lg-12 col-md-6 text-center" data-aos="fade-up" data-aos-delay="200">
+                    <div class="count-box" id="zhexian" style="width: auto;height:600px;"></div>
+                    <br><br><br>
+                </div>
+
+                <div class="col-lg-12 col-md-6 text-center" data-aos="fade-up" data-aos-delay="400">
+
+                    <div class="count-box" id="bingzhuang" style="width: auto;height:600px;"></div>
+                </div>
+
+                 <div class="col-lg-12 col-md-6 text-center" data-aos="fade-up" data-aos-delay="400">
+
+                    <div class="count-box">
+                        <img src="../static/assets/img/zhexian.jpg" style="width: 1000px;height: auto;">
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- ======= About Lists Section ======= -->
+    <section class="about-lists">
+        <div class="container">
+
+            <div class="row no-gutters">
+
+                <div class="col-lg-4 col-md-6 content-item" data-aos="fade-up">
+                    <span>01</span>
+                    <h4>分析结果（公司类别）</h4>
+                    <p>现阶段北京IT工程师岗位在51job平台上招聘公司类别，以民营公司为主，岗位占大多数，而现阶段IT公司数量以民营公司为领导地位。</p>
+                </div>
+
+                <div class="col-lg-4 col-md-6 content-item" data-aos="fade-up" data-aos-delay="100">
+                    <span>02</span>
+                    <h4>薪资占比</h4>
+                    <p>
+                        1、该图数据为所爬取的两个领域的薪资分布，横轴为薪资，纵轴数量为占比（由于数据总量不同，所以采用占比形式）；2、Python与Java的5k以下招聘数量较少，即此阶段岗位需求接近于饱和。30k薪资以上的招聘数量有上升趋势，说明当前市场高精尖人才仍较为紧缺，需求较大。</p>
+                </div>
+
+                <div class="col-lg-4 col-md-6 content-item" data-aos="fade-up" data-aos-delay="200">
+                    <span>03</span>
+                    <h4> 工作经验需求占比</h4>
+                    <p>
+                        1、该图为爬取数据的两个领域的工作经验要求数据占比图，左图为Python，右图Java;2、Python和Java岗位经验需求都是以3-4年经验为主，其次为2年和5年经验,但是Python对于经验的要求占比小于Java，
+                        表现出Python现阶段的初级市场需求应大于Java；3、从图中可看出Python现阶段对于学历的要求要大于Java，当然一部分原因也是Python所涉及的到的相关领域在初级专业学习中未曾涉及；4、从四个学位
+                        层次可以看出学历对于工作的影响也是较大的。</p>
+                </div>
+
+
+            </div>
+
+        </div>
+    </section><!-- End About Lists Section -->
+
+</main><!-- End #main -->
+
+<!-- ======= Footer ======= -->
+<footer id="footer">
+    <div class="container">
+        <div class="copyright">
+            &copy; Copyright <strong><span>51 Job 职位分析</span></strong>. All Rights Reserved
+        </div>
+        <div class="credits">
+            More Product <a href="index.html" target="_blank" title="Soft World">soft world</a> - Collect from <a
+                href="index.html" title="Soft wWrld产品" target="_blank">Soft World产品</a>
+        </div>
+    </div>
+</footer><!-- End Footer -->
+
+<a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
+
+<!-- Vendor JS Files -->
+<script src="../static/assets/vendor/jquery/jquery.min.js"></script>
+<script src="../static/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="../static/assets/vendor/jquery.easing/jquery.easing.min.js"></script>
+<script src="../static/assets/vendor/php-email-form/validate.js"></script>
+<script src="../static/assets/vendor/jquery-sticky/jquery.sticky.js"></script>
+<script src="../static/assets/vendor/venobox/venobox.min.js"></script>
+<script src="../static/assets/vendor/waypoints/jquery.waypoints.min.js"></script>
+<script src="../static/assets/vendor/counterup/counterup.min.js"></script>
+<script src="../static/assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+<script src="../static/assets/vendor/aos/aos.js"></script>
+
+<!--echarts main JS file-->
+<script src="../static/assets/js/echarts.min.js"></script>
+
+<!-- Template Main JS File -->
+<script src="../static/assets/js/main.js"></script>
+
+<script type="text/javascript">
+    // 基于准备好的dom，初始化echarts实例
+    var myChart = document.getElementById('zhifang');
+    var instance1 = echarts.init(myChart);
+    // 指定图表的配置项和数据
+    var option1 = {
+        title: {
+            text: 'Java & Python公司类别',
+            subtext: '数据来自 51 job'
+        },
+        tooltip: {
+            trigger: 'axis',
+            axisPointer: {
+                type: 'shadow'
+            }
+        },
+        legend: {
+            data: ['Java', 'Python']
+        },
+        grid: {
+            left: '3%',
+            right: '4%',
+            bottom: '3%',
+            containLabel: true
+        },
+        xAxis: {
+            type: 'value',
+            boundaryGap: [0, 0.01]
+        },
+        yAxis: {
+            type: 'category',
+            data: {{ comtypelist|tojson }}
+        },
+        series: [
+            {
+                name: 'Java',
+                type: 'bar',
+                data: {{ countnum }}
+            },
+            {
+                name: 'Python',
+                type: 'bar',
+                data: {{ pynum }}
+            }
+        ]
+    };
+    // 使用刚指定的配置项和数据显示图表。
+    instance1.setOption(option1);
+</script>
+<script type="text/javascript">
+    var myChart2 = document.getElementById('zhexian');
+    var instance2 = echarts.init(myChart2);
+    // 指定图表的配置项和数据
+    var option2 = {
+        title: {
+            text: 'Java & Python 薪资变化折线图',
+            subtext: '数据来源于 51 job'
+        },
+        tooltip: {
+            trigger: 'axis'
+        },
+        legend: {
+            data: ['Java', 'Python']
+        },
+        toolbox: {
+            show: true,
+            feature: {
+                dataZoom: {
+                    yAxisIndex: 'none'
+                },
+                dataView: {readOnly: false},
+                magicType: {type: ['line', 'bar']},
+                restore: {},
+                saveAsImage: {}
+            }
+        },
+        xAxis: {
+            type: 'category',
+            boundaryGap: false,
+            data: ['0-5k', '5k-10k', '10k-15k', '15k-20k', '20k-25k', '25k-30k', '30k+']
+        },
+        yAxis: {
+            type: 'value',
+            axisLabel: {
+                formatter: '{value}'
+            }
+        },
+        series: [
+            {
+                name: 'Java',
+                type: 'line',
+                data: [0.07, 0.24, 0.23, 0.21, 0.12, 0.05, 0.15],
+                markPoint: {
+                    data: [
+                        {type: 'max', name: '最大值'},
+                        {type: 'min', name: '最小值'}
+                    ]
+                },
+                markLine: {
+                    data: [
+                        {type: 'average', name: '平均值'}
+                    ]
+                }
+            },
+            {
+                name: 'Python',
+                type: 'line',
+                data: [0.06, 0.28, 0.24, 0.22, 0.12, 0.03, 0.08],
+                markPoint: {
+                    data: [
+                        {type: 'max', name: '最大值'},
+                        {type: 'min', name: '最小值'}
+                    ]
+                },
+                markLine: {
+                    data: [
+                        {type: 'average', name: '平均值'}
+                    ]
+                }
+            },
+        ]
+    };
+    // 使用刚指定的配置项和数据显示图表
+    instance2.setOption(option2);
+</script>
+<script type="text/javascript">
+    var myChart3 = document.getElementById('bingzhuang');
+    var instance3 = echarts.init(myChart3);
+    // 指定图表的配置项和数据
+    var option3 = {
+        title: {
+            text: '不同工作经验要求占比',
+            subtext: '数据来源于 51 job',
+            left: 'center'
+        },
+        tooltip: {
+            trigger: 'item',
+            formatter: '{a} <br/>{b} : {c} ({d}%)'
+        },
+        legend: {
+            orient: 'vertical',
+            left: 'left',
+            data: ['博士', '硕士', '本科', '大专', '在校生/应届生', '无需经验', '1年经验', '2年经验', '3-4年经验', '5年以上经验']
+        },
+        series: [
+            {
+                name: 'Python',
+                type: 'pie',
+                radius: '55%',
+                center: ['25%', '60%'],
+                data: [
+                    {value: 4, name: '博士'},
+                    {value: 31, name: '硕士'},
+                    {value: 71, name: '本科'},
+                    {value: 1, name: '大专'},
+                    {value: 84, name: '在校生/应届生'},
+                    {value: 55, name: '无需经验'},
+                    {value: 123, name: '1年经验'},
+                    {value: 175, name: '2年经验'},
+                    {value: 321, name: '3-4年经验'},
+                    {value: 130, name: '5年以上经验'}
+                ],
+                emphasis: {
+                    itemStyle: {
+                        shadowBlur: 10,
+                        shadowOffsetX: 0,
+                        shadowColor: 'rgba(0, 0, 0, 0.5)'
+                    }
+                }
+            },
+            {
+                name: 'Java',
+                type: 'pie',
+                radius: '55%',
+                center: ['75%', '60%'],
+                data: [
+                    {value: 0, name: '博士'},
+                    {value: 4, name: '硕士'},
+                    {value: 55, name: '本科'},
+                    {value: 1, name: '大专'},
+                    {value: 45, name: '在校生/应届生'},
+                    {value: 20, name: '无需经验'},
+                    {value: 93, name: '1年经验'},
+                    {value: 145, name: '2年经验'},
+                    {value: 404, name: '3-4年经验'},
+                    {value: 221, name: '5年以上经验'}
+                ],
+                emphasis: {
+                    itemStyle: {
+                        shadowBlur: 10,
+                        shadowOffsetX: 0,
+                        shadowColor: 'rgba(0, 0, 0, 0.5)'
+                    }
+                }
+            }
+        ]
+    };
+    // 使用刚指定的配置项和数据显示图表
+    instance3.setOption(option3);
+</script>
+</body>
+
+</html>
